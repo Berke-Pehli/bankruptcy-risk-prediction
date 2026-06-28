@@ -17,4 +17,10 @@ outputs/models/*
 outputs/figures/*
 outputs/tables/*
 outputs/metadata/*
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!outputs/models/.gitkeep
+!outputs/figures/.gitkeep
+!outputs/tables/.gitkeep
+!outputs/metadata/.gitkeep
 
