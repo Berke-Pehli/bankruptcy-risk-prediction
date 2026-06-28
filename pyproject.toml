@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bankruptcy-risk-prediction"
+version = "0.1.0"
+description = "Time-aware bankruptcy prediction for US public companies."
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "Berke Pehlivan" }]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bankruptcy_risk"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "D"]
+ignore = ["D203", "D213"]
+
+[tool.ruff.lint.per-file-ignores]
+"tasks/*.py" = ["D"]
+"tests/*.py" = ["D"]
+
+[tool.ruff.format]
+quote-style = "double"
+
