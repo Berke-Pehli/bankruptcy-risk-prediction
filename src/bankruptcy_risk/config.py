@@ -42,6 +42,19 @@ INTERPRETABLE_LOGIT_VALIDATION_PREDICTIONS_PATH = (
     OUTPUT_DIR / "tables" / "interpretable_logit_validation_predictions.csv"
 )
 INTERPRETABLE_LOGIT_MODEL_PATH = OUTPUT_DIR / "models" / "interpretable_logit.joblib"
+REGULARIZED_LOGIT_CV_RESULTS_PATH = (
+    OUTPUT_DIR / "tables" / "regularized_logit_cv_results.csv"
+)
+REGULARIZED_LOGIT_SELECTION_PATH = (
+    OUTPUT_DIR / "tables" / "regularized_logit_selection.csv"
+)
+REGULARIZED_LOGIT_COEFFICIENTS_PATH = (
+    OUTPUT_DIR / "tables" / "regularized_logit_coefficients.csv"
+)
+REGULARIZED_LOGIT_VALIDATION_PREDICTIONS_PATH = (
+    OUTPUT_DIR / "tables" / "regularized_logit_validation_predictions.csv"
+)
+REGULARIZED_LOGIT_MODELS_PATH = OUTPUT_DIR / "models" / "regularized_logit_models.joblib"
 
 ANNUAL_OVERVIEW_FIGURE_PATH = OUTPUT_DIR / "figures" / "annual_bankruptcy_overview.png"
 PERIOD_BALANCE_FIGURE_PATH = OUTPUT_DIR / "figures" / "class_balance_by_period.png"
@@ -60,5 +73,6 @@ EXPLORATION_MODULE_PATH = PACKAGE_DIR / "exploration.py"
 VISUALIZATION_MODULE_PATH = PACKAGE_DIR / "visualization.py"
 BASELINES_MODULE_PATH = PACKAGE_DIR / "baselines.py"
 INTERPRETABLE_LOGIT_MODULE_PATH = PACKAGE_DIR / "interpretable_logit.py"
+REGULARIZED_LOGIT_MODULE_PATH = PACKAGE_DIR / "regularized_logit.py"
 
 RANDOM_SEED = 42
