@@ -136,7 +136,15 @@ RATIO_DEFINITIONS = (
 
 RATIO_FEATURES = tuple(definition.feature for definition in RATIO_DEFINITIONS)
 MODEL_FEATURES = (*SIGNED_LOG_FEATURES, *RATIO_FEATURES)
-INTERPRETABLE_FEATURES = ("signed_log_total_assets", *RATIO_FEATURES)
+INTERPRETABLE_FEATURES = (
+    "signed_log_total_assets",
+    "working_capital_to_assets",
+    "debt_to_assets",
+    "return_on_assets",
+    "retained_earnings_to_assets",
+    "asset_turnover",
+    "market_value_to_liabilities",
+)
 
 
 def safe_divide(
@@ -258,4 +266,3 @@ def engineer_model_features(panel: pd.DataFrame) -> pd.DataFrame:
     if np.isinf(features.loc[:, MODEL_FEATURES].to_numpy()).any():
         raise ValueError("Engineered features must not contain infinite values.")
     return features.loc[:, [COMPANY_COLUMN, YEAR_COLUMN, TARGET_COLUMN, *MODEL_FEATURES]]
-

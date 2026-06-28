@@ -29,6 +29,19 @@ TEMPORAL_SPLIT_SUMMARY_PATH = OUTPUT_DIR / "tables" / "temporal_split_summary.cs
 EXPANDING_FOLD_SUMMARY_PATH = OUTPUT_DIR / "tables" / "expanding_fold_summary.csv"
 ANNUAL_OVERVIEW_TABLE_PATH = OUTPUT_DIR / "tables" / "annual_bankruptcy_overview.csv"
 TRAINING_RATIO_SUMMARY_PATH = OUTPUT_DIR / "tables" / "training_ratio_summary.csv"
+VALIDATION_BASELINE_PREDICTIONS_PATH = (
+    OUTPUT_DIR / "tables" / "validation_baseline_predictions.csv"
+)
+INTERPRETABLE_LOGIT_COEFFICIENTS_PATH = (
+    OUTPUT_DIR / "tables" / "interpretable_logit_coefficients.csv"
+)
+INTERPRETABLE_LOGIT_MARGINAL_EFFECTS_PATH = (
+    OUTPUT_DIR / "tables" / "interpretable_logit_marginal_effects.csv"
+)
+INTERPRETABLE_LOGIT_VALIDATION_PREDICTIONS_PATH = (
+    OUTPUT_DIR / "tables" / "interpretable_logit_validation_predictions.csv"
+)
+INTERPRETABLE_LOGIT_MODEL_PATH = OUTPUT_DIR / "models" / "interpretable_logit.joblib"
 
 ANNUAL_OVERVIEW_FIGURE_PATH = OUTPUT_DIR / "figures" / "annual_bankruptcy_overview.png"
 PERIOD_BALANCE_FIGURE_PATH = OUTPUT_DIR / "figures" / "class_balance_by_period.png"
@@ -45,5 +58,7 @@ SPLITTING_MODULE_PATH = PACKAGE_DIR / "splitting.py"
 PREPROCESSING_MODULE_PATH = PACKAGE_DIR / "preprocessing.py"
 EXPLORATION_MODULE_PATH = PACKAGE_DIR / "exploration.py"
 VISUALIZATION_MODULE_PATH = PACKAGE_DIR / "visualization.py"
+BASELINES_MODULE_PATH = PACKAGE_DIR / "baselines.py"
+INTERPRETABLE_LOGIT_MODULE_PATH = PACKAGE_DIR / "interpretable_logit.py"
 
 RANDOM_SEED = 42
