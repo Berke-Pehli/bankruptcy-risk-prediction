@@ -105,6 +105,18 @@ VALIDATION_OPTIMIZED_METRICS_PATH = (
     OUTPUT_DIR / "tables" / "validation_optimized_metrics.csv"
 )
 VALIDATION_CALIBRATION_PATH = OUTPUT_DIR / "tables" / "validation_calibration.csv"
+VALIDATION_BOOTSTRAP_POINT_METRICS_PATH = (
+    OUTPUT_DIR / "tables" / "validation_bootstrap_point_metrics.csv"
+)
+VALIDATION_BOOTSTRAP_REPLICATES_PATH = (
+    OUTPUT_DIR / "tables" / "validation_bootstrap_replicates.csv"
+)
+VALIDATION_BOOTSTRAP_INTERVALS_PATH = (
+    OUTPUT_DIR / "tables" / "validation_bootstrap_intervals.csv"
+)
+VALIDATION_BOOTSTRAP_PAIRWISE_PATH = (
+    OUTPUT_DIR / "tables" / "validation_bootstrap_pairwise_differences.csv"
+)
 
 ANNUAL_OVERVIEW_FIGURE_PATH = OUTPUT_DIR / "figures" / "annual_bankruptcy_overview.png"
 PERIOD_BALANCE_FIGURE_PATH = OUTPUT_DIR / "figures" / "class_balance_by_period.png"
@@ -129,6 +141,12 @@ VALIDATION_CALIBRATION_FIGURE_PATH = (
 VALIDATION_CONFUSION_MATRICES_FIGURE_PATH = (
     OUTPUT_DIR / "figures" / "validation_confusion_matrices.png"
 )
+VALIDATION_BOOTSTRAP_INTERVALS_FIGURE_PATH = (
+    OUTPUT_DIR / "figures" / "validation_bootstrap_metric_intervals.png"
+)
+VALIDATION_BOOTSTRAP_PAIRWISE_FIGURE_PATH = (
+    OUTPUT_DIR / "figures" / "validation_bootstrap_pairwise_differences.png"
+)
 
 CONFIG_MODULE_PATH = PACKAGE_DIR / "config.py"
 DATA_VALIDATION_MODULE_PATH = PACKAGE_DIR / "data_validation.py"
@@ -145,5 +163,6 @@ DECISION_TREE_MODULE_PATH = PACKAGE_DIR / "decision_tree.py"
 RANDOM_FOREST_MODULE_PATH = PACKAGE_DIR / "random_forest.py"
 GRADIENT_BOOSTING_MODULE_PATH = PACKAGE_DIR / "gradient_boosting.py"
 EVALUATION_MODULE_PATH = PACKAGE_DIR / "evaluation.py"
+UNCERTAINTY_MODULE_PATH = PACKAGE_DIR / "uncertainty.py"
 
 RANDOM_SEED = 42
