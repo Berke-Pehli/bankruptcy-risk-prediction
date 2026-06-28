@@ -55,6 +55,15 @@ REGULARIZED_LOGIT_VALIDATION_PREDICTIONS_PATH = (
     OUTPUT_DIR / "tables" / "regularized_logit_validation_predictions.csv"
 )
 REGULARIZED_LOGIT_MODELS_PATH = OUTPUT_DIR / "models" / "regularized_logit_models.joblib"
+DECISION_TREE_CV_RESULTS_PATH = OUTPUT_DIR / "tables" / "decision_tree_cv_results.csv"
+DECISION_TREE_SELECTION_PATH = OUTPUT_DIR / "tables" / "decision_tree_selection.csv"
+DECISION_TREE_FEATURE_IMPORTANCE_PATH = (
+    OUTPUT_DIR / "tables" / "decision_tree_feature_importance.csv"
+)
+DECISION_TREE_VALIDATION_PREDICTIONS_PATH = (
+    OUTPUT_DIR / "tables" / "decision_tree_validation_predictions.csv"
+)
+DECISION_TREE_MODEL_PATH = OUTPUT_DIR / "models" / "pruned_decision_tree.joblib"
 
 ANNUAL_OVERVIEW_FIGURE_PATH = OUTPUT_DIR / "figures" / "annual_bankruptcy_overview.png"
 PERIOD_BALANCE_FIGURE_PATH = OUTPUT_DIR / "figures" / "class_balance_by_period.png"
@@ -62,6 +71,7 @@ RATIO_DISTRIBUTION_FIGURE_PATH = (
     OUTPUT_DIR / "figures" / "training_ratio_distributions.png"
 )
 RATIO_CORRELATION_FIGURE_PATH = OUTPUT_DIR / "figures" / "training_ratio_correlation.png"
+DECISION_TREE_FIGURE_PATH = OUTPUT_DIR / "figures" / "pruned_decision_tree.png"
 
 CONFIG_MODULE_PATH = PACKAGE_DIR / "config.py"
 DATA_VALIDATION_MODULE_PATH = PACKAGE_DIR / "data_validation.py"
@@ -74,5 +84,6 @@ VISUALIZATION_MODULE_PATH = PACKAGE_DIR / "visualization.py"
 BASELINES_MODULE_PATH = PACKAGE_DIR / "baselines.py"
 INTERPRETABLE_LOGIT_MODULE_PATH = PACKAGE_DIR / "interpretable_logit.py"
 REGULARIZED_LOGIT_MODULE_PATH = PACKAGE_DIR / "regularized_logit.py"
+DECISION_TREE_MODULE_PATH = PACKAGE_DIR / "decision_tree.py"
 
 RANDOM_SEED = 42
