@@ -89,6 +89,22 @@ GRADIENT_BOOSTING_VALIDATION_PREDICTIONS_PATH = (
     OUTPUT_DIR / "tables" / "gradient_boosting_validation_predictions.csv"
 )
 GRADIENT_BOOSTING_MODEL_PATH = OUTPUT_DIR / "models" / "gradient_boosting.joblib"
+COMBINED_VALIDATION_PREDICTIONS_PATH = (
+    OUTPUT_DIR / "tables" / "combined_validation_predictions.csv"
+)
+VALIDATION_DEFAULT_METRICS_PATH = (
+    OUTPUT_DIR / "tables" / "validation_default_metrics.csv"
+)
+VALIDATION_THRESHOLD_CURVES_PATH = (
+    OUTPUT_DIR / "tables" / "validation_threshold_curves.csv"
+)
+VALIDATION_SELECTED_THRESHOLDS_PATH = (
+    OUTPUT_DIR / "tables" / "validation_selected_thresholds.csv"
+)
+VALIDATION_OPTIMIZED_METRICS_PATH = (
+    OUTPUT_DIR / "tables" / "validation_optimized_metrics.csv"
+)
+VALIDATION_CALIBRATION_PATH = OUTPUT_DIR / "tables" / "validation_calibration.csv"
 
 ANNUAL_OVERVIEW_FIGURE_PATH = OUTPUT_DIR / "figures" / "annual_bankruptcy_overview.png"
 PERIOD_BALANCE_FIGURE_PATH = OUTPUT_DIR / "figures" / "class_balance_by_period.png"
@@ -102,6 +118,16 @@ RANDOM_FOREST_IMPORTANCE_FIGURE_PATH = (
 )
 GRADIENT_BOOSTING_IMPORTANCE_FIGURE_PATH = (
     OUTPUT_DIR / "figures" / "gradient_boosting_feature_importance.png"
+)
+VALIDATION_PRECISION_RECALL_FIGURE_PATH = (
+    OUTPUT_DIR / "figures" / "validation_precision_recall_curves.png"
+)
+VALIDATION_ROC_FIGURE_PATH = OUTPUT_DIR / "figures" / "validation_roc_curves.png"
+VALIDATION_CALIBRATION_FIGURE_PATH = (
+    OUTPUT_DIR / "figures" / "validation_calibration_curves.png"
+)
+VALIDATION_CONFUSION_MATRICES_FIGURE_PATH = (
+    OUTPUT_DIR / "figures" / "validation_confusion_matrices.png"
 )
 
 CONFIG_MODULE_PATH = PACKAGE_DIR / "config.py"
@@ -118,5 +144,6 @@ REGULARIZED_LOGIT_MODULE_PATH = PACKAGE_DIR / "regularized_logit.py"
 DECISION_TREE_MODULE_PATH = PACKAGE_DIR / "decision_tree.py"
 RANDOM_FOREST_MODULE_PATH = PACKAGE_DIR / "random_forest.py"
 GRADIENT_BOOSTING_MODULE_PATH = PACKAGE_DIR / "gradient_boosting.py"
+EVALUATION_MODULE_PATH = PACKAGE_DIR / "evaluation.py"
 
 RANDOM_SEED = 42
