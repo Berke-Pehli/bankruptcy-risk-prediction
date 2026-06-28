@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "bankruptcy-risk-prediction"
-version = "0.1.0"
+version = "0.2.0"
 description = "Time-aware bankruptcy prediction for US public companies."
 readme = "README.md"
 requires-python = ">=3.12"

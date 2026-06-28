@@ -22,12 +22,17 @@ METADATA_DIR = OUTPUT_DIR / "metadata"
 RAW_DATA_PATH = RAW_DATA_DIR / "american_bankruptcy.csv"
 INTERIM_PANEL_PATH = INTERIM_DATA_DIR / "bankruptcy_panel.parquet"
 MODEL_FEATURES_PATH = PROCESSED_DATA_DIR / "model_features.parquet"
+MODEL_DATASET_PATH = PROCESSED_DATA_DIR / "model_dataset.parquet"
 RAW_VALIDATION_REPORT_PATH = METADATA_DIR / "raw_data_validation.json"
 FEATURE_DICTIONARY_PATH = OUTPUT_DIR / "tables" / "feature_dictionary.csv"
+TEMPORAL_SPLIT_SUMMARY_PATH = OUTPUT_DIR / "tables" / "temporal_split_summary.csv"
+EXPANDING_FOLD_SUMMARY_PATH = OUTPUT_DIR / "tables" / "expanding_fold_summary.csv"
 
 CONFIG_MODULE_PATH = PACKAGE_DIR / "config.py"
 DATA_VALIDATION_MODULE_PATH = PACKAGE_DIR / "data_validation.py"
 TARGET_MODULE_PATH = PACKAGE_DIR / "target.py"
 FEATURES_MODULE_PATH = PACKAGE_DIR / "features.py"
+SPLITTING_MODULE_PATH = PACKAGE_DIR / "splitting.py"
+PREPROCESSING_MODULE_PATH = PACKAGE_DIR / "preprocessing.py"
 
 RANDOM_SEED = 42

@@ -1,6 +1,6 @@
 [workspace]
 name = "bankruptcy-risk-prediction"
-version = "0.1.0"
+version = "0.2.0"
 description = "Time-aware bankruptcy prediction for US public companies."
 authors = ["Berke Pehlivan"]
 channels = ["conda-forge"]
