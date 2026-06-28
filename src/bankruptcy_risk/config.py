@@ -117,6 +117,18 @@ VALIDATION_BOOTSTRAP_INTERVALS_PATH = (
 VALIDATION_BOOTSTRAP_PAIRWISE_PATH = (
     OUTPUT_DIR / "tables" / "validation_bootstrap_pairwise_differences.csv"
 )
+CHAMPION_PERMUTATION_IMPORTANCE_PATH = (
+    OUTPUT_DIR / "tables" / "champion_permutation_importance.csv"
+)
+CHAMPION_PARTIAL_DEPENDENCE_PATH = (
+    OUTPUT_DIR / "tables" / "champion_partial_dependence.csv"
+)
+CROSS_MODEL_DRIVER_IMPORTANCE_PATH = (
+    OUTPUT_DIR / "tables" / "cross_model_driver_importance.csv"
+)
+CROSS_MODEL_DRIVER_CONSENSUS_PATH = (
+    OUTPUT_DIR / "tables" / "cross_model_driver_consensus.csv"
+)
 
 ANNUAL_OVERVIEW_FIGURE_PATH = OUTPUT_DIR / "figures" / "annual_bankruptcy_overview.png"
 PERIOD_BALANCE_FIGURE_PATH = OUTPUT_DIR / "figures" / "class_balance_by_period.png"
@@ -147,6 +159,15 @@ VALIDATION_BOOTSTRAP_INTERVALS_FIGURE_PATH = (
 VALIDATION_BOOTSTRAP_PAIRWISE_FIGURE_PATH = (
     OUTPUT_DIR / "figures" / "validation_bootstrap_pairwise_differences.png"
 )
+CHAMPION_PERMUTATION_IMPORTANCE_FIGURE_PATH = (
+    OUTPUT_DIR / "figures" / "champion_permutation_importance.png"
+)
+CHAMPION_PARTIAL_DEPENDENCE_FIGURE_PATH = (
+    OUTPUT_DIR / "figures" / "champion_partial_dependence.png"
+)
+CROSS_MODEL_DRIVER_HEATMAP_PATH = (
+    OUTPUT_DIR / "figures" / "cross_model_driver_importance.png"
+)
 
 CONFIG_MODULE_PATH = PACKAGE_DIR / "config.py"
 DATA_VALIDATION_MODULE_PATH = PACKAGE_DIR / "data_validation.py"
@@ -164,5 +185,6 @@ RANDOM_FOREST_MODULE_PATH = PACKAGE_DIR / "random_forest.py"
 GRADIENT_BOOSTING_MODULE_PATH = PACKAGE_DIR / "gradient_boosting.py"
 EVALUATION_MODULE_PATH = PACKAGE_DIR / "evaluation.py"
 UNCERTAINTY_MODULE_PATH = PACKAGE_DIR / "uncertainty.py"
+INTERPRETATION_MODULE_PATH = PACKAGE_DIR / "interpretation.py"
 
 RANDOM_SEED = 42
