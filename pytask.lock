@@ -6,11 +6,79 @@ state = "6f8cf48c582a8574fd712e5951d1447126ce2220662e52fde95db845913bd8db"
 
 [task.depends_on]
 "data/raw/american_bankruptcy.csv" = "cff2c899a97ecd629415cb22f59186000e74e1c0a78cfae036c0a53025419b5e"
-"src/bankruptcy_risk/config.py" = "2eb23430c03ca50197d20501cdfb6700d9ed0ab830c2a5766aebadbcc3d128ad"
+"src/bankruptcy_risk/config.py" = "283e07b0f9a6b04796db2d575e0640d6ae3ceed7516718969e95c574cb0b3cf3"
 "src/bankruptcy_risk/data_validation.py" = "40d1f4bd27cfde4b4662a18cdf7231ef021fcdb006c4d6b4256135c88d835b55"
 
 [task.produces]
 "outputs/metadata/raw_data_validation.json" = "5ca20bb7b920df47765a816c1e2afc0c639cb137367b124523e166228f196a1e"
+
+[[task]]
+id = "tasks/task_eda.py::task_plot_annual_overview"
+state = "800b565d62328fcfeb38107fb881f26cf56ab95329902e03863abb13a658c836"
+
+[task.depends_on]
+"outputs/tables/annual_bankruptcy_overview.csv" = "c64ac22aaed5c5b40c87c468b0224f74d7713ae75959dcc35f65af3d38d67312"
+"src/bankruptcy_risk/visualization.py" = "0b88c95064c1421c8ae2768ecb4598a6208a98049b5b480da853dda17e39e276"
+
+[task.produces]
+"outputs/figures/annual_bankruptcy_overview.png" = "2523a9fcc136d7363ed986005ba0f6ab4270fea379b9d702b44e4e9ad95e14d4"
+
+[[task]]
+id = "tasks/task_eda.py::task_plot_period_event_rates"
+state = "800b565d62328fcfeb38107fb881f26cf56ab95329902e03863abb13a658c836"
+
+[task.depends_on]
+"outputs/tables/temporal_split_summary.csv" = "ad4f8b3d09eab924abe512f958727781f0b4f222998a1a48178a9ab2af8a5757"
+"src/bankruptcy_risk/visualization.py" = "0b88c95064c1421c8ae2768ecb4598a6208a98049b5b480da853dda17e39e276"
+
+[task.produces]
+"outputs/figures/class_balance_by_period.png" = "60d2ba0fb18ca9f038b936cdacc654dc80d34a90ef45da2bf8fce8462b64659b"
+
+[[task]]
+id = "tasks/task_eda.py::task_plot_training_ratio_correlation"
+state = "800b565d62328fcfeb38107fb881f26cf56ab95329902e03863abb13a658c836"
+
+[task.depends_on]
+"data/processed/model_dataset.parquet" = "bb9a4ece675996d6ef0eb2e207adba88b10a072d515af3533650aa26001fcbe6"
+"src/bankruptcy_risk/exploration.py" = "8e3ee662851eeff53462f84f908200e76ce2aa5c3b029c2c233e9092a25e5de8"
+"src/bankruptcy_risk/visualization.py" = "0b88c95064c1421c8ae2768ecb4598a6208a98049b5b480da853dda17e39e276"
+
+[task.produces]
+"outputs/figures/training_ratio_correlation.png" = "ef6b5b459d668300b402c78503d365c7e84cd478bf1cfa4b6e55f139b7840110"
+
+[[task]]
+id = "tasks/task_eda.py::task_plot_training_ratio_distributions"
+state = "800b565d62328fcfeb38107fb881f26cf56ab95329902e03863abb13a658c836"
+
+[task.depends_on]
+"data/processed/model_dataset.parquet" = "bb9a4ece675996d6ef0eb2e207adba88b10a072d515af3533650aa26001fcbe6"
+"src/bankruptcy_risk/exploration.py" = "8e3ee662851eeff53462f84f908200e76ce2aa5c3b029c2c233e9092a25e5de8"
+"src/bankruptcy_risk/visualization.py" = "0b88c95064c1421c8ae2768ecb4598a6208a98049b5b480da853dda17e39e276"
+
+[task.produces]
+"outputs/figures/training_ratio_distributions.png" = "a881092486621c440afa27f0fc25e9a99babb261f9d8a48bac6b3aa29351c2ec"
+
+[[task]]
+id = "tasks/task_eda.py::task_write_annual_overview"
+state = "800b565d62328fcfeb38107fb881f26cf56ab95329902e03863abb13a658c836"
+
+[task.depends_on]
+"data/processed/model_dataset.parquet" = "bb9a4ece675996d6ef0eb2e207adba88b10a072d515af3533650aa26001fcbe6"
+"src/bankruptcy_risk/exploration.py" = "8e3ee662851eeff53462f84f908200e76ce2aa5c3b029c2c233e9092a25e5de8"
+
+[task.produces]
+"outputs/tables/annual_bankruptcy_overview.csv" = "c64ac22aaed5c5b40c87c468b0224f74d7713ae75959dcc35f65af3d38d67312"
+
+[[task]]
+id = "tasks/task_eda.py::task_write_training_ratio_summary"
+state = "800b565d62328fcfeb38107fb881f26cf56ab95329902e03863abb13a658c836"
+
+[task.depends_on]
+"data/processed/model_dataset.parquet" = "bb9a4ece675996d6ef0eb2e207adba88b10a072d515af3533650aa26001fcbe6"
+"src/bankruptcy_risk/exploration.py" = "8e3ee662851eeff53462f84f908200e76ce2aa5c3b029c2c233e9092a25e5de8"
+
+[task.produces]
+"outputs/tables/training_ratio_summary.csv" = "1c25bcd908902a44b5d4dd5f13bd195661d9e96cf3738877e9b787b4e345476a"
 
 [[task]]
 id = "tasks/task_features.py::task_build_model_features"
@@ -18,7 +86,7 @@ state = "9c31349d6fe68d7b26619965208012ffe6ec930372babcb757fd829f151011dd"
 
 [task.depends_on]
 "data/interim/bankruptcy_panel.parquet" = "ecb4379511cd47fcc6d49718a7b6ead04feaab1e1e636e55348edb975580a6ff"
-"src/bankruptcy_risk/config.py" = "2eb23430c03ca50197d20501cdfb6700d9ed0ab830c2a5766aebadbcc3d128ad"
+"src/bankruptcy_risk/config.py" = "283e07b0f9a6b04796db2d575e0640d6ae3ceed7516718969e95c574cb0b3cf3"
 "src/bankruptcy_risk/features.py" = "399113bc1f35fe58507e7d9febfee4842d39559f127148579ed28684d9b2e039"
 "src/bankruptcy_risk/target.py" = "d08dcc647b1ad0f645ad10d098f2e80069ff07872a9ed7d4d90099429d4af513"
 
@@ -41,7 +109,7 @@ state = "d77b7eebb5484fef0c260d4b03997043c80beb6edd32826b1874af14142acc4d"
 
 [task.depends_on]
 "data/processed/model_features.parquet" = "a9ef9a02690912e3233c4ddc96b62fd36d3651e8035bb321fb028fa9ead8014d"
-"src/bankruptcy_risk/config.py" = "2eb23430c03ca50197d20501cdfb6700d9ed0ab830c2a5766aebadbcc3d128ad"
+"src/bankruptcy_risk/config.py" = "283e07b0f9a6b04796db2d575e0640d6ae3ceed7516718969e95c574cb0b3cf3"
 "src/bankruptcy_risk/features.py" = "399113bc1f35fe58507e7d9febfee4842d39559f127148579ed28684d9b2e039"
 "src/bankruptcy_risk/splitting.py" = "04728e6c1920f6b836ae3659dae9e263f0c54c9976899ff38d0190a56f7d3fc4"
 
@@ -77,7 +145,7 @@ state = "ecce2c36f86867a0128c29004e801587062aa06aa1391fd0ddf61f4f04c62438"
 [task.depends_on]
 "data/raw/american_bankruptcy.csv" = "cff2c899a97ecd629415cb22f59186000e74e1c0a78cfae036c0a53025419b5e"
 "outputs/metadata/raw_data_validation.json" = "5ca20bb7b920df47765a816c1e2afc0c639cb137367b124523e166228f196a1e"
-"src/bankruptcy_risk/config.py" = "2eb23430c03ca50197d20501cdfb6700d9ed0ab830c2a5766aebadbcc3d128ad"
+"src/bankruptcy_risk/config.py" = "283e07b0f9a6b04796db2d575e0640d6ae3ceed7516718969e95c574cb0b3cf3"
 "src/bankruptcy_risk/data_validation.py" = "40d1f4bd27cfde4b4662a18cdf7231ef021fcdb006c4d6b4256135c88d835b55"
 "src/bankruptcy_risk/target.py" = "d08dcc647b1ad0f645ad10d098f2e80069ff07872a9ed7d4d90099429d4af513"
 

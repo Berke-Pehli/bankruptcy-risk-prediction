@@ -3,6 +3,7 @@
 .pytest_cache/
 .pytask/
 .ruff_cache/
+.cache/
 .coverage
 htmlcov/
 __pycache__/
@@ -23,4 +24,3 @@ outputs/metadata/*
 !outputs/figures/.gitkeep
 !outputs/tables/.gitkeep
 !outputs/metadata/.gitkeep
-

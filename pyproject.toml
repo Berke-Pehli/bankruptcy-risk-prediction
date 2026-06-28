@@ -16,6 +16,10 @@ packages = ["src/bankruptcy_risk"]
 [tool.pytest.ini_options]
 addopts = "-ra --strict-markers"
 testpaths = ["tests"]
+filterwarnings = [
+    "ignore:vert.*was deprecated:matplotlib.MatplotlibDeprecationWarning:seaborn.categorical",
+    "ignore:The set_bad function will be deprecated:PendingDeprecationWarning:seaborn.matrix",
+]
 
 [tool.pytask.ini_options]
 paths = ["tasks"]

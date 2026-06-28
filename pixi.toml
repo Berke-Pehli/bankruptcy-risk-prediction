@@ -27,6 +27,8 @@ hatchling = ">=1.26,<2"
 
 [activation.env]
 PYTHONPATH = "$PIXI_PROJECT_ROOT/src"
+MPLBACKEND = "Agg"
+MPLCONFIGDIR = "$PIXI_PROJECT_ROOT/.cache/matplotlib"
 
 [tasks]
 pipeline = "pytask"
