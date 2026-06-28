@@ -2,10 +2,26 @@ lock-version = "1"
 
 [[task]]
 id = "tasks/task_data_validation.py::task_validate_raw_data"
-state = "0cfb7546a62f0bb09128e89920646ddaa928f96c804a6834581c9b047aa54d42"
+state = "6f8cf48c582a8574fd712e5951d1447126ce2220662e52fde95db845913bd8db"
 
 [task.depends_on]
 "data/raw/american_bankruptcy.csv" = "cff2c899a97ecd629415cb22f59186000e74e1c0a78cfae036c0a53025419b5e"
+"src/bankruptcy_risk/config.py" = "0d007d479ffeadd51cc0f1f07ffd29c32bed278fd24038c83cb1f8c13ad37ef8"
+"src/bankruptcy_risk/data_validation.py" = "40d1f4bd27cfde4b4662a18cdf7231ef021fcdb006c4d6b4256135c88d835b55"
 
 [task.produces]
 "outputs/metadata/raw_data_validation.json" = "5ca20bb7b920df47765a816c1e2afc0c639cb137367b124523e166228f196a1e"
+
+[[task]]
+id = "tasks/task_target.py::task_construct_bankruptcy_panel"
+state = "ecce2c36f86867a0128c29004e801587062aa06aa1391fd0ddf61f4f04c62438"
+
+[task.depends_on]
+"data/raw/american_bankruptcy.csv" = "cff2c899a97ecd629415cb22f59186000e74e1c0a78cfae036c0a53025419b5e"
+"outputs/metadata/raw_data_validation.json" = "5ca20bb7b920df47765a816c1e2afc0c639cb137367b124523e166228f196a1e"
+"src/bankruptcy_risk/config.py" = "0d007d479ffeadd51cc0f1f07ffd29c32bed278fd24038c83cb1f8c13ad37ef8"
+"src/bankruptcy_risk/data_validation.py" = "40d1f4bd27cfde4b4662a18cdf7231ef021fcdb006c4d6b4256135c88d835b55"
+"src/bankruptcy_risk/target.py" = "d08dcc647b1ad0f645ad10d098f2e80069ff07872a9ed7d4d90099429d4af513"
+
+[task.produces]
+"data/interim/bankruptcy_panel.parquet" = "ecb4379511cd47fcc6d49718a7b6ead04feaab1e1e636e55348edb975580a6ff"
