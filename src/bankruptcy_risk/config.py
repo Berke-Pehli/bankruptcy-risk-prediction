@@ -129,6 +129,20 @@ CROSS_MODEL_DRIVER_IMPORTANCE_PATH = (
 CROSS_MODEL_DRIVER_CONSENSUS_PATH = (
     OUTPUT_DIR / "tables" / "cross_model_driver_consensus.csv"
 )
+FINAL_MODEL_SPECIFICATION_PATH = OUTPUT_DIR / "tables" / "final_model_specification.csv"
+FINAL_TEST_PREDICTIONS_PATH = OUTPUT_DIR / "tables" / "final_test_predictions.csv"
+FINAL_TEST_METRICS_PATH = OUTPUT_DIR / "tables" / "final_test_metrics.csv"
+FINAL_TEST_CALIBRATION_PATH = OUTPUT_DIR / "tables" / "final_test_calibration.csv"
+FINAL_TEST_BOOTSTRAP_REPLICATES_PATH = (
+    OUTPUT_DIR / "tables" / "final_test_bootstrap_replicates.csv"
+)
+FINAL_TEST_BOOTSTRAP_INTERVALS_PATH = (
+    OUTPUT_DIR / "tables" / "final_test_bootstrap_intervals.csv"
+)
+VALIDATION_TEST_COMPARISON_PATH = (
+    OUTPUT_DIR / "tables" / "validation_test_performance_comparison.csv"
+)
+FINAL_CHAMPION_MODEL_PATH = OUTPUT_DIR / "models" / "final_random_forest.joblib"
 
 ANNUAL_OVERVIEW_FIGURE_PATH = OUTPUT_DIR / "figures" / "annual_bankruptcy_overview.png"
 PERIOD_BALANCE_FIGURE_PATH = OUTPUT_DIR / "figures" / "class_balance_by_period.png"
@@ -168,6 +182,12 @@ CHAMPION_PARTIAL_DEPENDENCE_FIGURE_PATH = (
 CROSS_MODEL_DRIVER_HEATMAP_PATH = (
     OUTPUT_DIR / "figures" / "cross_model_driver_importance.png"
 )
+FINAL_TEST_DIAGNOSTICS_FIGURE_PATH = (
+    OUTPUT_DIR / "figures" / "final_test_diagnostics.png"
+)
+FINAL_TEST_CONFUSION_MATRIX_FIGURE_PATH = (
+    OUTPUT_DIR / "figures" / "final_test_confusion_matrix.png"
+)
 
 CONFIG_MODULE_PATH = PACKAGE_DIR / "config.py"
 DATA_VALIDATION_MODULE_PATH = PACKAGE_DIR / "data_validation.py"
@@ -186,5 +206,6 @@ GRADIENT_BOOSTING_MODULE_PATH = PACKAGE_DIR / "gradient_boosting.py"
 EVALUATION_MODULE_PATH = PACKAGE_DIR / "evaluation.py"
 UNCERTAINTY_MODULE_PATH = PACKAGE_DIR / "uncertainty.py"
 INTERPRETATION_MODULE_PATH = PACKAGE_DIR / "interpretation.py"
+FINAL_EVALUATION_MODULE_PATH = PACKAGE_DIR / "final_evaluation.py"
 
 RANDOM_SEED = 42
