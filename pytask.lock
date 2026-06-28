@@ -6,11 +6,34 @@ state = "6f8cf48c582a8574fd712e5951d1447126ce2220662e52fde95db845913bd8db"
 
 [task.depends_on]
 "data/raw/american_bankruptcy.csv" = "cff2c899a97ecd629415cb22f59186000e74e1c0a78cfae036c0a53025419b5e"
-"src/bankruptcy_risk/config.py" = "0d007d479ffeadd51cc0f1f07ffd29c32bed278fd24038c83cb1f8c13ad37ef8"
+"src/bankruptcy_risk/config.py" = "d60344eea2ba8cd75bd2a0517f48eb9278dfac04457a73562d11d552cd2edc07"
 "src/bankruptcy_risk/data_validation.py" = "40d1f4bd27cfde4b4662a18cdf7231ef021fcdb006c4d6b4256135c88d835b55"
 
 [task.produces]
 "outputs/metadata/raw_data_validation.json" = "5ca20bb7b920df47765a816c1e2afc0c639cb137367b124523e166228f196a1e"
+
+[[task]]
+id = "tasks/task_features.py::task_build_model_features"
+state = "9c31349d6fe68d7b26619965208012ffe6ec930372babcb757fd829f151011dd"
+
+[task.depends_on]
+"data/interim/bankruptcy_panel.parquet" = "ecb4379511cd47fcc6d49718a7b6ead04feaab1e1e636e55348edb975580a6ff"
+"src/bankruptcy_risk/config.py" = "d60344eea2ba8cd75bd2a0517f48eb9278dfac04457a73562d11d552cd2edc07"
+"src/bankruptcy_risk/features.py" = "399113bc1f35fe58507e7d9febfee4842d39559f127148579ed28684d9b2e039"
+"src/bankruptcy_risk/target.py" = "d08dcc647b1ad0f645ad10d098f2e80069ff07872a9ed7d4d90099429d4af513"
+
+[task.produces]
+"data/processed/model_features.parquet" = "a9ef9a02690912e3233c4ddc96b62fd36d3651e8035bb321fb028fa9ead8014d"
+
+[[task]]
+id = "tasks/task_features.py::task_write_feature_dictionary"
+state = "9c31349d6fe68d7b26619965208012ffe6ec930372babcb757fd829f151011dd"
+
+[task.depends_on]
+"src/bankruptcy_risk/features.py" = "399113bc1f35fe58507e7d9febfee4842d39559f127148579ed28684d9b2e039"
+
+[task.produces]
+"outputs/tables/feature_dictionary.csv" = "bf4105dfd1bcc73d74fdbe9ffb9fea397f304ae1e2918d2d740ddce7f4685837"
 
 [[task]]
 id = "tasks/task_target.py::task_construct_bankruptcy_panel"
@@ -19,7 +42,7 @@ state = "ecce2c36f86867a0128c29004e801587062aa06aa1391fd0ddf61f4f04c62438"
 [task.depends_on]
 "data/raw/american_bankruptcy.csv" = "cff2c899a97ecd629415cb22f59186000e74e1c0a78cfae036c0a53025419b5e"
 "outputs/metadata/raw_data_validation.json" = "5ca20bb7b920df47765a816c1e2afc0c639cb137367b124523e166228f196a1e"
-"src/bankruptcy_risk/config.py" = "0d007d479ffeadd51cc0f1f07ffd29c32bed278fd24038c83cb1f8c13ad37ef8"
+"src/bankruptcy_risk/config.py" = "d60344eea2ba8cd75bd2a0517f48eb9278dfac04457a73562d11d552cd2edc07"
 "src/bankruptcy_risk/data_validation.py" = "40d1f4bd27cfde4b4662a18cdf7231ef021fcdb006c4d6b4256135c88d835b55"
 "src/bankruptcy_risk/target.py" = "d08dcc647b1ad0f645ad10d098f2e80069ff07872a9ed7d4d90099429d4af513"
 
