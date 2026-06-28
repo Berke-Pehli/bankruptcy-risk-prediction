@@ -1,0 +1,11 @@
+lock-version = "1"
+
+[[task]]
+id = "tasks/task_data_validation.py::task_validate_raw_data"
+state = "0cfb7546a62f0bb09128e89920646ddaa928f96c804a6834581c9b047aa54d42"
+
+[task.depends_on]
+"data/raw/american_bankruptcy.csv" = "cff2c899a97ecd629415cb22f59186000e74e1c0a78cfae036c0a53025419b5e"
+
+[task.produces]
+"outputs/metadata/raw_data_validation.json" = "5ca20bb7b920df47765a816c1e2afc0c639cb137367b124523e166228f196a1e"

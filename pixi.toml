@@ -25,8 +25,8 @@ jupyterlab = ">=4,<5"
 ipykernel = ">=6,<7"
 hatchling = ">=1.26,<2"
 
-[pypi-dependencies]
-bankruptcy-risk-prediction = { path = ".", editable = true }
+[activation.env]
+PYTHONPATH = "$PIXI_PROJECT_ROOT/src"
 
 [tasks]
 pipeline = "pytask"
@@ -36,4 +36,3 @@ lint = "ruff check ."
 format = "ruff format ."
 check = { depends-on = ["lint", "test"] }
 all = { depends-on = ["check", "pipeline"] }
-

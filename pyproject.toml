@@ -17,6 +17,9 @@ packages = ["src/bankruptcy_risk"]
 addopts = "-ra --strict-markers"
 testpaths = ["tests"]
 
+[tool.pytask.ini_options]
+paths = ["tasks"]
+
 [tool.ruff]
 line-length = 100
 target-version = "py312"
@@ -32,4 +35,3 @@ ignore = ["D203", "D213"]
 
 [tool.ruff.format]
 quote-style = "double"
-
